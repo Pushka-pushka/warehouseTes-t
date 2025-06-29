@@ -15,6 +15,8 @@ namespace warehouseTestApp.Model
         public double Weight { get; }
         public DateOnly? ProductionDate { get; }
         public DateOnly? ExpiryDate { get; }
+        private DateOnly nowDate = DateOnly.FromDateTime(DateTime.Now);
+
 
         public double Volume => Width * Height * Depth;
 
@@ -26,6 +28,9 @@ namespace warehouseTestApp.Model
 
             if (productionDate == null && expiryDate == null)
                 throw new ArgumentException("Необходимо указать дату производства или срок годности");
+            else if (expiryDate <= nowDate)
+                throw new ArgumentException("коробка просрочена");
+
 
             Id = id;
             Width = width;

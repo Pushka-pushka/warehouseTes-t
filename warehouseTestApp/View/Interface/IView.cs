@@ -14,6 +14,7 @@ namespace warehouseTestApp.View.Interface
         void DisplayPallets(IEnumerable<Pallet> pallets);
         void DisplayBoxes(IEnumerable<Box> boxes);
         void DisplayPalletsGroupedByExpiry(IEnumerable<IGrouping<DateOnly, Pallet>> groups);
+        void SortPalletsByExpiryCategories(IEnumerable<Pallet> pallets);
         string GetUserInput(string prompt);
     }
 }
