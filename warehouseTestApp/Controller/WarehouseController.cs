@@ -18,7 +18,7 @@ namespace warehouseTestApp.Controller
             _warehouse = warehouse;
             _view = view;
         }
-
+          
         public void Run()
         {
             bool running = true;
