@@ -18,7 +18,7 @@ namespace warehouseTestApp.Controller
             _warehouse = warehouse;
             _view = view;
         }
-
+          
         public void Run()
         {
             bool running = true;
@@ -56,6 +56,11 @@ namespace warehouseTestApp.Controller
                             ShowPalletsWithNearestExpiry();
                             break;
                         case "8":
+                            _view.SortPalletsByExpiryCategories(_warehouse.Pallets); // сортировка по категориям
+                            break;
+
+                        case "9":  
+                           
                             running = false;
                             break;
                         default:
